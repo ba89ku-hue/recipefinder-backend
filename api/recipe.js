@@ -59,6 +59,7 @@ CRITICAL: nutrition object is REQUIRED for every recipe. Include all 4 values: c
     });
 
     const data = await response.json();
+    console.log('Anthropic API response:', JSON.stringify(data, null, 2));
 
     // レスポンスをそのまま返す
     return res.status(200).json(data);
