@@ -33,15 +33,15 @@ export default async function handler(req, res) {
             role: 'user',
             content: `以下の材料を使って作れる料理を3つ提案してください。
 
-材料: ${ingredients.join('、')}
+content: `あなたは栄養士です。以下の材料を使って作れる料理を3つ提案してください。
 
-あなたは栄養士です。以下の材料を使って作れる料理を3つ提案してください。
+材料: ${ingredients.join('、')}
 
 必ず以下の情報を全て含めてください：
 1. 料理名（末尾に絵文字1つ）
 2. 食材と分量（1人前）
 3. 調味料と分量
-4. 調理手順（3-5ステップ）
+4. 調理手順（5〜7ステップで詳しく）
 5. 栄養情報（必須・概算値）
 
 以下の正確なJSON形式で回答してください。他の文章は一切含めないでください：
@@ -51,8 +51,8 @@ export default async function handler(req, res) {
     {
       "name": "鶏の照り焼き 🍗",
       "ingredients": ["鶏もも肉 150g", "玉ねぎ 1/4個"],
-      "seasonings": ["醤油 大さじ1", "みりん 大さじ1", "砂糖 小さじ1"],
-      "steps": ["鶏肉を一口大に切る", "フライパンで焼く", "調味料を加えて煮詰める"],
+      "seasonings": ["醤油 大さじ1", "みりん 大さじ1"],
+      "steps": ["鶏肉を一口大に切る", "フライパンで焼く", "調味料を加えて煮詰める", "玉ねぎを追加", "完成"],
       "nutrition": {
         "calories": 380,
         "salt": 1.8,
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
 }
 
 nutritionは必ず含めてください。calories, salt, sugar, fatの4つ全て必須です。`
-          }
+            }
         ]
       })
     });
