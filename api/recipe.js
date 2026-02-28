@@ -31,8 +31,6 @@ export default async function handler(req, res) {
         messages: [
           {
             role: 'user',
-            content: `以下の材料を使って作れる料理を3つ提案してください。
-
 content: `あなたは栄養士です。以下の材料を使って作れる料理を3つ提案してください。
 
 材料: ${ingredients.join('、')}
